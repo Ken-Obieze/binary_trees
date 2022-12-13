@@ -29,7 +29,7 @@ typedef struct binary_tree_s bst_t;
 typedef struct binary_tree_s avl_t;
 typedef struct binary_tree_s heap_t;
 
-void binary_tree_print(const binary_tree_t *);
+void binary_tree_print(const binary_tree_t *tree);
 
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
@@ -71,7 +71,9 @@ heap_t *array_to_heap(int *array, size_t size);
 int heap_extract(heap_t **root);
 int *heap_to_sorted_array(heap_t *heap, size_t *size);
 
-
+size_t binary_tree_height(const binary_tree_t *tree);
+void btl_companion(const binary_tree *tre, void (*func)(int));
+int btic_companion(const binary_tree_t *tree, size_t index, size_t size);
 
 
 #endif
