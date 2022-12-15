@@ -4,7 +4,7 @@
  * binary_tree_is_complete - checks if a binary tree is complete
  * @tree: pointer to the root node of the tree to check
  * Return: 1 if tree is complete, else
- * 	If tree is NULL, your function must return 0
+ *	If tree is NULL, your function must return 0
  */
 
 int binary_tree_is_complete(const binary_tree_t *tree)
@@ -16,7 +16,7 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 
 	size = binary_tree_size(tree);
 
-	return(btic_companion(tree, 0, size));
+	return (btic_companion(tree, 0, size));
 }
 
 /**

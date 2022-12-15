@@ -147,4 +147,4 @@ Searching for a node in a binary heap of size n.
 
 Authors ✒️
 Fashemore Toyin (Totybeca)
-Ken Obieze 
+Ejiofor Kenneth Obieze (Ken-Obieze)
