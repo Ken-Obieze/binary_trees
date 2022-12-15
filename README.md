@@ -144,7 +144,3 @@ Searching for a node in an AVL tree of size n.
 Inserting the value n.
 Extracting the root node.
 Searching for a node in a binary heap of size n.
-
-Authors ✒️
-Fashemore Toyin (Totybeca)
-Ejiofor Kenneth Obieze (Ken-Obieze)

@@ -1,39 +1,65 @@
 #include "binary_trees.h"
-
 /**
- * binary_tree_levelorder - goes through a binary tree using
- * level-order traversal
- * @tree: pointer to the root node of the tree to traverse
- * @func: pointer to a function to call for each node
+ * binary_tree_height - measures the height of a binary tree.
+ *@tree: pointer to the root node of the tree to measure the height.
+ * Return: if tree is NULL, your function must return 0.
  */
-
-void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
+size_t binary_tree_height(const binary_tree_t *tree)
 {
-	size_t level, max_level;
+	if (tree)
+	{
+		int left = 0, right = 0;
 
-	if (!tree || !func)
-		return;
+		if (tree->right)
+			right = 1 + binary_tree_height(tree->right);
+		if (tree->left)
+			left = 1 + binary_tree_height(tree->left);
+		if (left > right)
+			return (left);
+		else
+			return (right);
+	}
+	else
+		return (0);
+}
+/**
+ * print_at_level - print node, especific level
+ * @tree: pointer to the root node of the tree to traverse
+ * @func: pointer to a function to call for each node.
+ * @level: level to print
+ */
+void print_at_level(const binary_tree_t *tree, void (*func)(int), int level)
+{
+	if (tree && func)
+	{
+		if (level == 1)
+			func(tree->n);
+		else
+		{
+			print_at_level(tree->left, func, level - 1);
+			print_at_level(tree->right, func, level - 1);
+		}
+	}
 
-	max_level = binary_tree_height(tree) + 1;
-
-	for (level = 1; level <= max_level; level++)
-		btl_companion(tree, func, level);
 }
 
 /**
- * btl_companion - traverse tree using post-order
- * @tree: tree to traverse
- * @func: pointer to function to call each node
- * @level: level of tree to call function
+ * binary_tree_levelorder - goes through a binary tree in level-order traversal
+ * @tree: pointer to the root node of the tree to traverse
+ * @func: pointer to a function to call for each node.
  */
-
-void btl_companion(const binary_tree *tree, void (*func)(int), size_t level)
+void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 {
-	if (level == 1)
-		func(tree->n);
-	else
+	size_t h = 0, i = 1;
+
+	if (tree && func)
 	{
-		btl_companion(tree->left, func, level - 1);
-		btl_companion(tree->right, func, level - 1);
+		h = binary_tree_height(tree);
+		while (i <= h + 1)
+		{
+			print_at_level(tree, func, i);
+			i++;
+		}
 	}
+
 }
