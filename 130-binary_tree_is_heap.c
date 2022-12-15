@@ -83,3 +83,4 @@ int binary_tree_is_heap(const binary_tree_t *tree)
 
 	return (check_parent(tree->left) && check_parent(tree->right));
 }
+

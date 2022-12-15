@@ -18,3 +18,4 @@ bst_t *bst_search(const bst_t *tree, int value)
 		return (bst_search(tree->right, value));
 	return (NULL);
 }
+

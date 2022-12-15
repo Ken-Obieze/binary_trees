@@ -63,3 +63,4 @@ int binary_tree_is_avl(const binary_tree_t *tree)
 		return (0);
 	return (is_avl_helper(tree, INT_MIN, INT_MAX));
 }
+
